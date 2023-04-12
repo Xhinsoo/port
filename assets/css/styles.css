@@ -4,8 +4,8 @@
   font-size: 10px;
 
   --background-color: rgb(100, 27, 76);
-  --brandColor: rgb(218, 218, 218);
-  --textColor: rgba(66, 66, 66, 0.849);
+  --brandColor: rgb(22, 22, 22);
+  --textColor: rgba(250, 250, 250, 0.849);
   --accentColor: rgb(204, 201, 233);
   --onAccent: rgb(0, 0, 0);
   --transparentAccentColor: rgba(66, 66, 66, 0.849);
@@ -25,76 +25,101 @@
   border: none;
   border-radius: none;
 }
-
-body {
-  background-color: var(--brandColor);
-  font-family: "Roboto", sans-serif;
-  font-style: italic;
-  display: flex;
-  flex-direction: column;
+body
+{
   min-height: 100svh; /*scalable viewport height*/
   max-width: 100svw;
+  background-color: var(--brandColor);
+}
+header .logo{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  background:var(--brandColor);
+  
 }
 
-header {
+header nav {
+  
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  
+}
+header nav ul li{
+  display: block;
   list-style-type: none;
-}
 
-header h1 {
-  font-size: var(--paddingMd);
 }
-
-header nav ul {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-header nav ul li a,
-header nav ul li a:active,
-header nav ul li a:visited,
-header nav ul li a:hover {
-  color: var(--onAccent);
+header nav ul li a{
+  color: var(--textColor);
   text-decoration: none;
-  font-weight: none;
   font-size: var(--paddingMd);
+  font-weight: none;
   padding: var(--paddingXs);
-  border-radius: var(--paddingSm); /*circle hover*/
+  border-radius: var(--paddingSm);
 }
+
 header nav ul li a:hover {
-  background-color: var(--accentColor);
+  background-color: var(--accentColor); /*circle hover*/
 }
-
-header nav ul {
+.about{
+  font-size: var(--paddingMd);
   display: flex;
-  list-style-type: none;
+  flex-direction:column;
+  justify-content: center;  
+  min-height: 80svh;
+  padding-left: var(--paddingLg);
 }
-
-main section {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-  justify-content: center;
+.about h1{
   font-size: var(--paddingLg);
+  color: var(--textColor);
 }
-#contact ul li,
-h2 {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: var(--paddingXs);
+span{
+  color:orange;
 }
+.about p{
+  font-size: var(--paddingSm);
+  color: var(--textColor);
+  font-weight:bold;
+  
+}
+.images{
+  width: 100%;
+  height: 70%;
+  position:absolute;
+  bottom: 0;
+  right: 50px;
+}
+.images img{
+  height: 100%;
+  left: 50%;
+  bottom: 0;
+  position:absolute;
+  transform: translateX(-10%);
+  transition: bottom 1s,left 1s;
+}
+.images:hover .shape{
+  bottom: 40px;
+}
+.images:hover .boy{
+  left: 45%;
+} 
 
-/*for mobile*/
+
+/*for pc*/
 @media screen and (min-width: 762px) {
   header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: var(--paddingSm);
+  }
+  header nav ul li{
+    display: inline-block;
+    list-style-type: none;
+  
+  }
   }
   header nav ul {
     flex-direction: row;
@@ -121,3 +146,4 @@ h2 {
 p {
   font-size: var(--paddingXs);
 }
+
