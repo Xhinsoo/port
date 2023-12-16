@@ -1,3 +1,3 @@
 Portfolio
 
-(demo: https://xhinsoo.github.io/port/)
+[demo: https://xhinsoo.github.io/port/]
