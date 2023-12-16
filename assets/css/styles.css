@@ -2,14 +2,9 @@
 
 :root {
   font-size: 10px;
-
-  --background-color: rgb(100, 27, 76);
-  --brandColor: rgb(22, 22, 22);
-  --textColor: rgba(250, 250, 250, 0.849);
-  --accentColor: rgb(204, 201, 233);
-  --onAccent: rgb(0, 0, 0);
-  --transparentAccentColor: rgba(66, 66, 66, 0.849);
-
+  --background-color: #C5ADC5;
+  --secondary-color: white;
+  --accent-Color: #213F99;
   --paddingSm: 1.75em;
   --paddingMd: calc(var(--paddingSm) * 1.25);
   --paddingLg: calc(var(--paddingMd) * 1.25);
@@ -25,123 +20,119 @@
   border: none;
   border-radius: none;
 }
-body
-{
+
+body {
+  background-image: linear-gradient(to right,#C5ADC5,#B2B5E0 );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  flex-direction: column;
   min-height: 100svh; /*scalable viewport height*/
   max-width: 100svw;
-  background-color: var(--brandColor);
-}
-header .logo{
-  position: relative;
-  width: 100%;
-  height: 10vh;
-  background:var(--brandColor);
+  font-family: "Audiowide", sans-serif;
+
 }
 
-header nav {
+ .navigation-bar{
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  
-}
-header nav ul li{
-  display: block;
-  list-style-type: none;
-
-}
-header nav ul li a{
-  color: var(--textColor);
-  text-decoration: none;
-  font-size: var(--paddingMd);
-  font-weight: none;
+  border-style: outset;
   padding: var(--paddingXs);
-  border-radius: var(--paddingSm);
+  
+ }
+
+ .logo-nav {
+  width: 25%;
+  text-align: center;
+  padding: var(--paddingXs);
+  scale: 0.9;
 }
 
-header nav ul li a:hover {
-  background-color: var(--accentColor); /*circle hover*/
+.logo-nav img:hover{
+  transform: scale(1.2);
 }
-.about{
-  font-size: var(--paddingMd);
+
+.social-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 30%;
+    padding: var(--paddingXs);
+    scale: 0.8;
+  }
+
+.social-nav > div img:hover {
+   transform: scale(1.2);
+ }
+
+
+.content {
+  padding: var(--paddingMd);
   display: flex;
-  flex-direction:column;
-  justify-content: center;  
-  min-height: 80svh;
-  padding-left: var(--paddingLg);
-}
-.about h1{
-  font-size: var(--paddingLg);
-  color: var(--textColor);
-}
-span{
-  color:orange;
-}
-.about p{
-  font-size: var(--paddingSm);
-  color: var(--textColor);
-  font-weight:bold;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  min-height: 88svh;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 1%;
   
 }
-.images{
-  width: 100%;
-  height: 70%;
-  position:absolute;
-  bottom: 0;
-  right: 50px;
-}
-.images img{
-  height: 100%;
-  left: 50%;
-  bottom: 0;
-  position:absolute;
-  transform: translateX(-10%);
-  transition: bottom 1s,left 1s;
-}
-.images:hover .shape{
-  bottom: 40px;
-}
-.images:hover .boy{
-  left: 45%;
-} 
 
+.intro, .project, .copy-right{
+  font-size: 28px;
+  background-image: linear-gradient(to right,black,black );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-left: inset black;
+  padding-left: var(--paddingXs);
+}
+.greeting-text,.project-content{
+  margin-bottom: 5%;
+}
+.project ul{
+list-style-type:  none;
+}
 
-/*for pc*/
-@media screen and (min-width: 762px) {
-  header {
+.project-names li:hover{
+  background-image: linear-gradient(to right,rgb(238, 235, 235),rgb(235, 234, 234) );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-style: scale(1.5);
+};
+  
+.copy-right{
+  text-align: center;
+}
+
+.copy-right{
+  font-size: 24px;
+  border: none;
+  text-align: center;
+}
+
+@media (min-width: 50em){
+  .logo-nav, .social-nav {
+    position: relative;
+    width: 15%;
+    height: 10%vh;
+    text-align:center;
+    padding: var(--paddingXs);
+  }
+
+  .content{
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--paddingSm);
-  }
-  header nav ul li{
-    display: inline-block;
-    list-style-type: none;
-  
-  }
-  }
-  header nav ul {
-    flex-direction: row;
-  }
-  main section {
     padding: var(--paddingLg);
+    height: 80%;
+    margin-top: 0%;
   }
-}
 
-footer {
-  display: flex;
-  flex-direction: row;
-
-  padding: var(--paddingXs);
+.intro, .project{
+  flex:1;
+  max-width: 45%;
 }
-h1 {
-  font-size: var(--paddingLg);
-  text-align: left;
 }
-
-h2 {
-  font-size: var(--paddingMd);
-}
-p {
-  font-size: var(--paddingXs);
-}
-

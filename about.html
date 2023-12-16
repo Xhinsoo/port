@@ -4,29 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Week 2 </title>
+    <title>Xhinsoo</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="icon" type="image/png" href="assets/images/icon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"
+    />
   </head>
 
-  <body> 
-    <header></header>
-    <div class="logo"> 
-      <nav>
-        <img src="assets/images/logo.png" alt="logo">
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="index.html">Index</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class ="about">
-        <h1>Hello, <span>class</span>. </h1>
-           <p>This is Week 2
-            <br>Exercise 2. </p>
+  <body>
+    <div class="navigation-bar">
+      <div class="logo-nav"><img src="assets/images/logo.png" /></div>
+      <div class="social-nav">
+        <div>
+          <a href="https://google.com/mail"
+            ><img src="assets/images/gmail.png"
+          /></a>
+        </div>
+        <div>
+          <a href="https://github.com/Xhinsoo"
+            ><img src="assets/images/github.png"
+          /></a>
+        </div>
       </div>
-    </main> 
+    </div>
+
+    <main>
+      <div class="content">
+        <div class="intro">
+          <h2 class="greeting-text">Hello world,</h2>
+          <h4>
+            <span class="content-description"
+              >My name is <span class="name font-effect-emboss"> Xhin. </span>
+              I am a web developer. I enjoy solving problems and bringing
+              solutions to your needs.
+            </span>
+          </h4>
+        </div>
+
+        <div class="project">
+          <h2 class="project-content">Projects</h2>
+          <h4>
+            <ul class="project-names">
+              <li>Fitforge</li>
+              <li>Ecotracker</li>
+              <li><a href="https://xhinsoo.github.io/Calculator/"> Calculator</a></li>
+            </ul>
+          </h4>
+        </div>
+      </div>
+    </main>
+    <footer class="copy-right">
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <a href="https://github.com/Xhinsoo" target="_blank" class="github">
+        Xhinsoo
+      </a>
+    </footer>
+    <script src="ap.js" defer></script>
   </body>
 </html>
