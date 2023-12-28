@@ -124,8 +124,16 @@ header {
   background-image: linear-gradient(to right, black, black);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-left: inset black;
-  padding-left: var(--paddingXs);
+  color: white;
+  padding-left: 20px;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgb(250, 250, 250),
+      rgba(221, 115, 221, 0)
+    )
+    0% 0% 0% 1%;
 }
 .greeting-text,
 .project-content {
@@ -146,13 +154,23 @@ header {
   -webkit-text-fill-color: transparent;
   transform-style: scale(1.2);
 }
+.nameId:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(238, 235, 235),
+    rgb(235, 234, 234)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-style: scale(1.2);
+}
 
 .copy-right {
   font-size: 2em;
   border: none;
   text-align: center;
   height: 1%;
-  border: 1px;
+  margin: auto;
 }
 
 @media only screen and (min-width: 861px) {
