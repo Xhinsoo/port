@@ -27,6 +27,7 @@ body {
   -webkit-text-fill-color: transparent;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 100svh; /*scalable viewport height*/
   max-width: 100svw;
   font-family: "Audiowide", sans-serif;
@@ -47,18 +48,22 @@ header {
   flex-direction: row;
   justify-content: space-between;
   padding: var(--paddingXs);
-  border: 1px solid blue;
-
+  border: 1px solid rgb(255, 166, 0);
 }
 
 .logo-nav {
-  width: 25%;
   padding: 1em 2.2em;
   border: 2px solid green;
   scale: 0.7;
   max-width: 100%;
   height: auto;
+  text-align: center;
 }
+
+/* .logo-nav img {
+  object-fit: contain;
+  flex-grow: 300px;
+} */
 
 .logo-nav img:hover {
   transform: scale(1.2);
@@ -80,6 +85,7 @@ header {
 .nav-close {
   margin-left: 10px;
   opacity: 0;
+  text-align: center;
 }
 
 .social-nav {
@@ -90,20 +96,17 @@ header {
   width: 100%;
   padding: var(--paddingXs);
   margin-top: 0;
-  padding-top:0;
+  padding-top: 0;
   opacity: 0;
   border: 2px solid rgb(111, 0, 255);
   max-width: 100%;
   height: auto;
 }
-.social-nav  div img {
+.social-nav div img {
   scale: 0.7;
   border: 1px solid;
   margin-right: -0.5em;
- 
-
-
-
+  padding: 0.2em;
 }
 
 .social-nav > div img:hover {
@@ -113,13 +116,11 @@ header {
 .show-menu {
   opacity: 1;
   top: 3.5rem;
-  transition: transform 1sec;
 }
 .show-icon .nav-burger {
   transition: 1sec;
   opacity: 0;
   transform: rotate(90deg);
-  
 }
 .show-icon .nav-close {
   opacity: 1;
@@ -189,14 +190,25 @@ header {
 
 .copy-right {
   font-size: 2em;
-  border: none;
+  border: 2px solid black;
   text-align: center;
-  height: 1%;
-  margin: auto;
+  width: 50%;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: 861px) {
-  .logo-nav,
+  .logo-nav {
+    width: 100%;
+    padding: 1em 2.2em;
+    border: 2px solid rgb(128, 0, 0);
+    scale: 0.7;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
   .social-nav {
     width: 15%;
     height: 10%vh;
