@@ -19,12 +19,13 @@
   background: none;
   border: none;
   border-radius: none;
+  text-decoration: none;
 }
 
 body {
-  background-image: linear-gradient(to right, #c5adc5, #b2b5e0);
+  /* background-image: linear-gradient(to right, #c5adc5, #b2b5e0);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,7 +43,6 @@ body > div:last-of-type {
   display: none;
 }
 
-
 header {
   /* position: fixed; */
   width: 100%;
@@ -58,6 +58,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: var(--paddingXs);
+  border-style: outset;
 }
 
 .logo-nav {
@@ -105,17 +106,26 @@ header {
   /* border: 2px solid rgb(111, 0, 255); */
   max-width: 100%;
   height: auto;
-  transition: ease-in-out 0.8s;
+  transition: ease-in-out 0.5s;
 }
 .social-nav div img {
   scale: 0.7;
   /* border: 1px solid; */
   margin-right: -0.6em;
   padding: 0.2em;
+  /* border: 1px solid yellow; */
+  border-radius: 2em;
+  transition: transform -0.25s, color 0.25s, border-color 0.25s,
+    box-shadow 0.25s;
 }
 
 .social-nav > div img:hover {
   transform: scale(0.9);
+  transform: translateY(-0.25em);
+  border-color: red;
+  /* border-color: rgb(102, 2, 231);; */
+  color: white;
+  box-shadow: 0 0.5em 0.5em -0.4em red;
 }
 
 .show-menu {
@@ -143,24 +153,24 @@ header {
   justify-content: space-evenly;
   text-align: center;
   font-size: 1.1em;
-
 }
 
 .intro,
 .project,
 .copy-right {
   font-size: 2em;
-  background-image: linear-gradient(to right, black, black);
+  /* background-image: linear-gradient(to right, black, black);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: white;
+  -webkit-text-fill-color: transparent; */
+  color: rgb(14, 13, 13);
   padding-left: 20px;
+  border-bottom: 1px solid black;
   border-width: 3px;
   border-style: solid;
   border-image: linear-gradient(
       to bottom,
-      rgb(250, 250, 250),
-      rgba(221, 115, 221, 0)
+      rgb(247, 5, 5),
+      rgba(231, 54, 151, 0)
     )
     0% 0% 0% 1%;
 }
@@ -171,23 +181,34 @@ header {
 .project li {
   list-style-type: none;
   padding: 0.1em;
+  font-size: 1.1em;
+  color: black;
 }
+.project li a {
+  color: black;
+}
+
 
 .project-names li:hover {
   background-image: linear-gradient(
     to right,
-    rgb(238, 235, 235),
-    rgb(235, 234, 234)
+    rgb(12, 238, 166),
+    rgb(42, 124, 42)
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transform-style: scale(1.2);
 }
-.nameId:hover {
+
+
+.nameId{
+  color: black;
+}
+.name:hover, .nameId:hover {
   background-image: linear-gradient(
     to right,
-    rgb(238, 235, 235),
-    rgb(235, 234, 234)
+    rgb(29, 85, 29),
+    rgb(38, 172, 49)
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -203,10 +224,11 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding-left: 0;
+  border: none;
+  
 }
 
 @media only screen and (min-width: 1201px) {
-
   .logo-nav {
     width: 100%;
     padding: 1em 2.2em;
@@ -215,6 +237,9 @@ header {
     max-width: 100%;
     height: auto;
     text-align: center;
+  }
+  .navigation-bar {
+    border-style: none;
   }
 
   .social-nav {
@@ -234,7 +259,7 @@ header {
     height: 10%;
     display: flex;
     justify-content: space-between;
-    align-items: auto;
+
     border-style: outset;
     margin-bottom: 0;
   }
