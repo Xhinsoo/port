@@ -47,7 +47,6 @@ header {
   /* position: fixed; */
   width: 100%;
   height: 20svh;
-  /* border: 2px solid rgb(0, 128, 43); */
   max-width: 100%;
   height: auto;
   margin-bottom: 0;
@@ -58,6 +57,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: var(--paddingXs);
+  border-width: 4px;
   border-style: outset;
 }
 
@@ -84,7 +84,6 @@ header {
   height: max-content;
   inset: 0;
   margin: auto;
-  /* border: 2px solid red; */
 }
 
 .nav-close {
@@ -103,7 +102,6 @@ header {
   margin-top: 0;
   padding-top: 0;
   opacity: 0;
-  /* border: 2px solid rgb(111, 0, 255); */
   max-width: 100%;
   height: auto;
   transition: ease-in-out 0.25s;
@@ -152,7 +150,6 @@ header {
   align-items: center;
   text-align: center;
   font-size: 1.2em;
- 
 }
 
 .intro,
@@ -200,6 +197,9 @@ header {
   box-shadow: -0.5em -0.5em 0.5em -0.6em rgb(250, 78, 9);
 }
 
+.content-description{
+  line-height:1.5em;
+}
 .greeting-text,
 .project-content {
   margin-bottom: 0.5em;
@@ -208,7 +208,6 @@ header {
 .project li {
   list-style-type: none;
   padding: 0.1em;
-  font-size: 1.1em;
   color: black;
 }
 .project li a {
@@ -225,8 +224,8 @@ header {
   -webkit-text-fill-color: transparent;
   transform-style: scale(1.2);
 }
-.name{
-  color:rgb(42, 124, 42)
+.name {
+  color: rgb(42, 124, 42);
 }
 .nameId {
   color: black;
@@ -297,7 +296,7 @@ header {
     height: 10%;
     display: flex;
     justify-content: space-between;
-
+    border-width: 3px;
     border-style: outset;
     margin-bottom: 0;
   }
@@ -326,5 +325,9 @@ header {
   }
   .project {
     margin-top: 10em;
+  }
+
+  .content-description{
+    line-height: 0em;
   }
 }
