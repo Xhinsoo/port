@@ -1,5 +1,8 @@
 [Portfolio](https://xhinsoo.github.io/port/)
 
-vanilla js, css and html
+Vanilla Js, Css and Html
+
+
+
 
 

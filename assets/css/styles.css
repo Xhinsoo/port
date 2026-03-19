@@ -149,7 +149,7 @@ header {
 
 .content {
   margin: 0;
-  min-height: 70svh;
+  min-height: 50svh;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -248,7 +248,7 @@ header {
 }
 
 .copy-right {
-  font-size: 2em;
+  font-size: 1em;
   /* border: 2px solid black; */
   text-align: center;
   width: 50%;
@@ -265,6 +265,9 @@ header {
     font-size: 2em;
     max-width: 600px;
   }
+  . content {
+    min-height: 80svh}
+    
 }
 
 @media only screen and (min-width: 1201px) {
@@ -318,6 +321,7 @@ header {
     align-items: center;
     padding: 0;
     font-size: 1.5em;
+    min-height: 80svh
   }
 
   .intro,
