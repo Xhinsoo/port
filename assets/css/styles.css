@@ -116,13 +116,13 @@ header {
 } */
 .socials-nav div img {
   scale: 0.7;
-  /* border: 1px solid;  */
+
   margin-right: -0.6em;
   padding: 0.2em;
-   /* border: 1px solid rgb(17, 17, 15); */
+  /* border: 1px solid rgb(37, 37, 36); */
   border-radius: 2em;
   transition: transform -0.25s, color 0.25s, border-color 0.25s,
-    box-shadow 0.25s; 
+    box-shadow 0.25s;
 }
 
 .socials-nav > div img:hover {
@@ -149,7 +149,7 @@ header {
 
 .content {
   margin: 0;
-  min-height: 50svh;
+  min-height: 70svh;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -248,7 +248,7 @@ header {
 }
 
 .copy-right {
-  font-size: 1em;
+  font-size: 2em;
   /* border: 2px solid black; */
   text-align: center;
   width: 50%;
@@ -265,9 +265,6 @@ header {
     font-size: 2em;
     max-width: 600px;
   }
-  . content {
-    min-height: 80svh}
-    
 }
 
 @media only screen and (min-width: 1201px) {
@@ -321,7 +318,6 @@ header {
     align-items: center;
     padding: 0;
     font-size: 1.5em;
-    min-height: 80svh
   }
 
   .intro,
