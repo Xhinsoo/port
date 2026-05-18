@@ -1,11 +1,16 @@
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
 
-    toggle.addEventListener('click',()=>{
-        nav.classList.toggle('show-menu')
-        toggle.classList.toggle('show-icon')
-    })
-}
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+      }
 
-showMenu('nav-toggle', 'nav-menu')
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        if (body.classList.contains('dark-theme')) {
+          localStorage.setItem('theme', 'dark');
+        } else {
+          localStorage.setItem('theme', 'light');
+        }
+      });

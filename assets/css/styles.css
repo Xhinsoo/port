@@ -1,343 +1,325 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"); */
+      /* ==========================================================================
+         1. THEME DEFINITIONS & VARIABLES
+         ========================================================================== */
+      :root {
+        --bg: #ffffff;
+        --text-pure: #000000;
+        --text-main: #111111;
+        --text-muted: #374151; 
+        --accent-teal: #0d9488;
+        --line: #e5e7eb;
+        --tag-bg: #f3f4f6;
+        --toggle-bg: #e5e7eb;
+        --toggle-thumb: #ffffff;
+        --accent-red: #ef4444;
+      }
 
-:root {
-  font-size: 10px;
-  --background-color: #c5adc5;
-  --secondary-color: white;
-  --accent-Color: #213f99;
-  --paddingSm: 1.75em;
-  --paddingMd: calc(var(--paddingSm) * 1.25);
-  --paddingLg: calc(var(--paddingMd) * 1.25);
-  --paddingXs: calc(var(--paddingSm) * 0.25);
-}
+      body.dark-theme {
+        --bg: #0b0f19;       
+        --text-pure: #ffffff;
+        --text-main: #f3f4f6;     
+        --text-muted: #9ca3af; 
+        --accent-teal: #2dd4bf;
+        --line: #1f2937;     
+        --tag-bg: #1f2937;
+        --toggle-bg: #1f2937;
+        --toggle-thumb: #0b0f19;
+        --accent-red: #f87171;
+      }
 
-/*resets all elements*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: none;
-  text-decoration: none;
-}
+      /* ==========================================================================
+         2. CORE SINGLE-PAGE HEIGHT ENGINE
+         ========================================================================== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+      }
 
-body {
-  /* background-image: linear-gradient(to right, #c5adc5, #b2b5e0);
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100svh; /*scalable viewport height */
-  max-width: 100svw;
-  font-family: "Audiowide", sans-serif;
-}
+      body {
+        background-color: var(--bg);
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, sans-serif;
+        letter-spacing: -0.01em;
+        line-height: 1.6;
+        
+        /* Rigidly locks the page frame size to prevent vertical scrolling */
+        height: 100vh !important;
+        width: 100vw;
+        overflow: hidden; 
+        
+        display: flex;
+        flex-direction: column;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
 
-body > div:last-of-type {
-  font-weight: 600;
-}
+      .page-container {
+        width: 100%;
+        max-width: 860px; 
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Forces footer to the bottom floor */
+        height: 100% !important; 
+      }
 
-.odm_extension {
-  display: none;
-}
+      /* ==========================================================================
+         3. TOP NAVIGATION BAR
+         ========================================================================== */
+      .navigation-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0; /* Compact padding to preserve vertical pixels */
+        width: 100%;
+      }
 
-header {
-  /* position: fixed; */
-  width: 100%;
-  height: 20svh;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 0;
-}
-.navigation-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--paddingXs);
-  border-width: 4px;
-  border-style: outset;
-}
+      .logo-pokemon {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800; 
+        letter-spacing: -0.04em; 
+        color: var(--text-pure);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem; 
+      }
 
-.logo-nav {
-  padding: 1em 2.2em;
-  /* border: 2px solid green; */
-  scale: 0.7;
-  max-width: 100%;
-  height: auto;
-  text-align: center;
-}
+      .logo-pokemon .ball {
+        color: var(--accent-red); 
+        font-size: 1.2rem;
+        line-height: 1;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+      }
 
-.logo-nav img:hover {
-  transform: scale(1.2);
- }
+      .logo-pokemon:hover .ball {
+        transform: scale(1.3) rotate(20deg); 
+        color: var(--accent-teal); 
+      }
 
- .socials-nav{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  
- }
-/*
-.nav_toggle {
-  position: relative;
-  margin-right: 50px;
-}
-.nav-burger,
-.nav-close {
-  position: absolute;
-  width: max-content;
-  height: max-content;
-  inset: 0;
-  margin: auto;
-}
+      .nav-utilities {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
 
-.nav-close {
-  margin-left: 10px;
-  opacity: 0;
-  text-align: center;
-}
+      .socials-nav {
+        display: flex;
+        gap: 2rem;
+      }
 
-.social-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  padding: var(--paddingXs);
-  margin-top: 0;
-  padding-top: 0;
-  opacity: 0;
-  max-width: 100%;
-  height: auto;
-  transition: ease-in-out 0.25s;
-} */
-.socials-nav div img {
-  scale: 0.7;
+      .socials-nav a {
+        font-size: 1.4rem;
+        color: var(--text-muted) !important; 
+        font-weight: 600;
+        transition: color 0.15s ease;
+      }
 
-  margin-right: -0.6em;
-  padding: 0.2em;
-  /* border: 1px solid rgb(37, 37, 36); */
-  border-radius: 2em;
-  transition: transform -0.25s, color 0.25s, border-color 0.25s,
-    box-shadow 0.25s;
-}
+      .socials-nav a:hover {
+        color: var(--text-pure) !important;
+      }
 
-.socials-nav > div img:hover {
-  transform: scale(0.9);
-  border-color: red;
-  border-color: rgb(102, 2, 231);
-  color: white;
-  box-shadow: 0 0.5em 0.5em -0.2em red;
-}  
+      .theme-toggle-btn {
+        background: var(--toggle-bg);
+        border: 1px solid var(--line);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 24px;
+        border-radius: 20px;
+        position: relative;
+        padding: 0;
+        transition: background-color 0.2s ease;
+      }
 
-.show-menu {
-  opacity: 1;
-  top: 0.5rem;
-}
-.show-icon .nav-burger {
-  transition: 1sec;
-  opacity: 0;
-  transform: rotate(90deg);
-}
-.show-icon .nav-close {
-  opacity: 1;
-  transform: rotate(90deg);
-}
+      .theme-toggle-thumb {
+        width: 16px;
+        height: 16px;
+        background: var(--toggle-thumb);
+        border-radius: 50%;
+        position: absolute;
+        left: 3px;
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: block;
+      }
 
-.content {
-  margin: 0;
-  min-height: 70svh;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  font-size: 1.2em;
-  padding: 0;
-}
+      body.dark-theme .theme-toggle-thumb {
+        transform: translateX(18px);
+      }
 
-.intro,
-.copy-right {
-  font-size: 1.8em;
-  margin-bottom: 5em;
-  color: rgb(14, 13, 13);
-  padding-left: 20px;
-  border-bottom: 1px solid black;
-  border-width: 3px;
-  border-style: solid;
-  border-image: linear-gradient(
-      to bottom,
-      rgb(247, 5, 5),
-      rgba(231, 54, 151, 0)
-    )
-    1% 0% 0% 1%;
-}
+      /* ==========================================================================
+         4. COMPACT MIDDLE WORKSPACE
+         ========================================================================== */
+      .content {
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers layout vertically */
+        gap: 2rem; 
+        padding: 1rem 0;
+      }
 
-.project {
-  font-size: 1.8em;
-  color: rgb(14, 13, 13);
-  width: 100%;
-  height: 100%;
-  margin-bottom: 0;
-  padding-right: 0.5em;
-  border-bottom: 2px solid black;
-  border-width: 1.5;
-  border-style: solid;
-  border-image: linear-gradient(to left, rgb(58, 175, 138), rgb(42, 124, 42)) 0%
-    1% 1% 0%;
+      .greeting-text {
+        font-size: 2.1rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 1rem;
+        color: var(--text-pure);
+      }
+      .name{  
+        color: red;
+        font-weight: 600;
+        border-bottom: 2px solid var(--accent-red);
+  padding-bottom: 2px;
 }
 
-.project:hover {
-  border-color: rgb(15, 14, 14);
-  color: white;
-  box-shadow: 0.5em 0.5em 0.5em -0.5em rgb(15, 105, 6);
-}
-.intro:hover {
-  border-color: rgb(228, 163, 163);
-  color: black;
-  box-shadow: -0.5em -0.5em 0.5em -0.6em rgb(250, 78, 9);
-}
+      .content-description {
+        font-size: 1.35rem;
+        color: var(--text-muted) !important;
+        line-height: 1.65;
+        font-weight: 400;
+      }
 
-.content-description {
-  line-height: 1.5em;
-}
-.greeting-text,
-.project-content {
-  margin-bottom: 0.5em;
-  color: black;
-}
-.project li {
-  list-style-type: none;
-  padding: 0.1em;
-  color: black;
-}
-.project li a {
-  color: black;
-}
+      .name {
+        color: var(--text-pure);
+        font-weight: 600;
+      }
 
-.project-names li:hover {
-  background-image: linear-gradient(
-    to right,
-    rgb(12, 238, 166),
-    rgb(42, 124, 42)
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform-style: scale(1.2);
-}
-.name {
-  color: rgb(42, 124, 42);
-}
-.nameId {
-  color: black;
-}
-.name:hover,
-.nameId:hover {
-  background-image: linear-gradient(
-    to right,
-    rgb(250, 78, 9),
-    rgb(172, 38, 38)
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform-style: scale(1.2);
-}
+      .section-subheading, .project-content {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 1.5rem;
+        color: var(--text-muted) !important;
+        display: block;
+      }
 
-.copy-right {
-  font-size: 2em;
-  /* border: 2px solid black; */
-  text-align: center;
-  width: 50%;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  border: none;
-}
+      /* ==========================================================================
+         5. TECHNOLOGY CAPSULES (Forced Row Compression Fix)
+         ========================================================================== */
+      .global-pill-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.6rem;
+        margin-top: 0.6rem;
+        width: 100%;
+      }
 
-@media only screen and (min-width: 648px) {
-  .intro,
-  .project {
-    font-size: 2em;
-    max-width: 600px;
-  }
-}
+      /* Targets the bio core stack specifically using your native HTML markup class */
+      .intro .global-pill-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        max-width: 380px; /* Widens container bounding box to snap tags into 2 neat rows */
+      }
 
-@media only screen and (min-width: 1201px) {
-  body {
-    font-size: 1em;
-  }
-  /* .logo-nav {
-    width: 100%;
-    padding: 1em 2.2em;
-    /* border: 2px solid rgb(128, 0, 0); */
-    /* scale: 0.7;
-    max-width: 100%;
-    height: auto;
-    text-align: center;
-  } */ */
-  .navigation-bar {
-    border-style: none;
-  }
+      .tech-tag {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-main) !important;
+        background-color: var(--tag-bg);
+        border: 1px solid var(--line);
+        padding: 0.2rem 0.6rem; /* Reduced internal padding to save physical width */
+        border-radius: 4px;
+        letter-spacing: 0.01em;
+        white-space: nowrap; 
+        text-align: center;
+      }
 
-  
+      /* ==========================================================================
+         6. SELECTED PROJECTS LINKS
+         ========================================================================== */
+      .project-names {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        
+        width: 100%;
+      }
 
-  /* .social-nav {
-    transition: ease-in-out 0.8s;
-    flex-basis: 120px;
-    width: 100%;
-    height: 10%vh;
-    text-align: center;
-    padding: var(--paddingXs);
-  }
+      .project-names li {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1.2rem;
+        margin-bottom: 0.6rem;
+        width: 100%;
+      }
 
-  .nav_toggle {
-    display: none;
-  } */
-  /* header {
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: space-between;
-    border-width: 3px;
-    border-style: outset;
-    margin-bottom: 0;
-  }
-  .social-nav {
-    opacity: 1;
-    flex-direction: row;
-  } */
-  .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    font-size: 1.5em;
-  }
+      .project-names li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-main);
+        transition: padding-left 0.15s ease, color 0.15s ease;
+      }
 
-  .intro,
-  .project {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 400px;
-    /* border: 1px solid; */
-    text-align: center;
-  }
-  .intro {
-    margin-bottom: 10em;
-  }
-  .project {
-    margin-top: 10em;
-  }
+      .project-names li a:hover {
+        padding-left: 0.4rem;
+        color: var(--accent-teal);
+      }
 
-  .content-description {
-    line-height: 0em;
-  }
-}
+      .project-names li a::after {
+        content: "↗";
+        font-size: 1.3rem;
+        color: var(--text-muted); 
+        transition: transform 0.15s ease, color 0.15s ease;
+      }
+
+      .project-names li a:hover::after {
+        transform: translate(2px, -2px);
+        color: var(--accent-teal);
+      }
+
+      /* ==========================================================================
+         7. ANCHORED FOOTER
+         ========================================================================== */
+      .copy-right {
+        font-size: 1.3rem;
+        color: var(--text-muted) !important;
+        text-align: center;
+        padding: 1.5rem 0; 
+        border-top: 1px solid var(--line);
+        width: 100%;
+        margin-top: auto; /* Permanently locks footer to the bottom floor boundary */
+      }
+
+      /* Dark mode contrast overrides */
+      body.dark-theme .socials-nav a,
+      body.dark-theme .copy-right,
+      body.dark-theme .project-content,
+      body.dark-theme .section-subheading {
+        color: #9ca3af !important; 
+      }
+
+      body.dark-theme .socials-nav a:hover { color: #ffffff !important; }
+      body.dark-theme .content-description { color: #d1d5db !important; }
+      body.dark-theme .tech-tag { color: #f3f4f6 !important; }
+
+      /* ==========================================================================
+         8. SIDE-BY-SIDE DESKTOP ADAPTATION
+         ========================================================================== */
+      @media only screen and (min-width: 768px) {
+        .content {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start; 
+          gap: 8rem;
+          padding: 4rem 0; 
+        }
+
+        .intro, .project { 
+          flex: 1 1 50%; 
+          display: flex;
+          flex-direction: column;
+        }
+      }
